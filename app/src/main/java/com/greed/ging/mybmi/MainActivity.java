@@ -21,6 +21,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         findViews();
+        bHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("BMI說明")
+                        .setMessage("體重kg/身高平方m")
+                        .setPositiveButton("OK", null)
+                        .show();
+            }
+        });
 
     }
 
