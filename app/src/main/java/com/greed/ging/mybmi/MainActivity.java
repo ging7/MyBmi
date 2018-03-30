@@ -50,17 +50,23 @@ public class MainActivity extends AppCompatActivity {
         float bmi = weight/(height*height);
         //Intent畫面
         Intent intent = new Intent(this, ResultActivity.class);
+        //intent.putExtra("BMI_EXTRA", bmi);
+        Bundle bag = new Bundle();
+        bag.putFloat("BMI_EXTRA", bmi);
+        bag.putString("TEST_EXTRA","TESTIN*2");
+        intent.putExtras(bag);
         startActivity(intent);
         //log
         Log.d("BMI", String.valueOf(bmi));
         Toast.makeText(this, String.valueOf(bmi), Toast.LENGTH_LONG).show();
 
-        new AlertDialog.Builder(this)
+        //Alert對話方塊
+        /*new AlertDialog.Builder(this)
                 .setMessage(bmi+"")
                 .setTitle("BMI結果")
                 .setPositiveButton("OK", null)
                 .setNeutralButton("Cancel", null)
-                .show();
+                .show();*/
 
     }
 }
