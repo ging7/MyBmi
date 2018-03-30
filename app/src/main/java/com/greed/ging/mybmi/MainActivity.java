@@ -1,5 +1,6 @@
 package com.greed.ging.mybmi;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
         float weight = Float.parseFloat(w); //強制轉型
         float height = Float.parseFloat(h);
         float bmi = weight/(height*height);
+        //Intent畫面
+        Intent intent = new Intent(this, ResultActivity.class);
+        startActivity(intent);
+        //log
         Log.d("BMI", String.valueOf(bmi));
         Toast.makeText(this, String.valueOf(bmi), Toast.LENGTH_LONG).show();
 
